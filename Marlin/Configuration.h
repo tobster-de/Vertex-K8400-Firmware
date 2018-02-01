@@ -129,7 +129,9 @@
   #define TEMP_SENSOR_1 5
 #endif
 #define TEMP_SENSOR_2 0
-#define TEMP_SENSOR_BED 5
+
+// AnyCubic Ultra Base
+#define TEMP_SENSOR_BED 11
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
 //#define TEMP_SENSOR_1_AS_REDUNDANT
@@ -151,8 +153,10 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
+
+// see: https://e3d-online.dozuki.com/Guide/V6+Marlin+Configuration/5
+#define HEATER_0_MAXTEMP 285
+#define HEATER_1_MAXTEMP 285
 #define HEATER_2_MAXTEMP 275
 #define BED_MAXTEMP 150
 
@@ -191,10 +195,14 @@
 //    #define  DEFAULT_Ki 0.1
 //    #define  DEFAULT_Kd 12
 
-// Mendel Parts V9 on 12V
-    #define  DEFAULT_Kp 63.0
-    #define  DEFAULT_Ki 2.25
-    #define  DEFAULT_Kd 440
+// VERTEX with E3Dv6 clones
+//    #define  DEFAULT_Kp 26.24
+//    #define  DEFAULT_Ki 2.56
+//    #define  DEFAULT_Kd 67.18
+// VERTEX with E3Dv6 original
+    #define  DEFAULT_Kp 39.14
+    #define  DEFAULT_Ki 4.93 
+    #define  DEFAULT_Kd 77.75
 #endif // PIDTEMP
 
 // Bed Temperature Control
@@ -356,10 +364,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 #define max_software_endstops true  // If true, axis won't move to coordinates greater than the defined lengths below.
 
 // Travel limits after homing
-#define X_MAX_POS 200
+#define X_MAX_POS 210
 #define X_MIN_POS 0
-#define Y_MAX_POS 200
-#define Y_MIN_POS 20
+#define Y_MAX_POS 193
+#define Y_MIN_POS 0
 #define Z_MAX_POS 190
 #define Z_MIN_POS 0
 
@@ -490,8 +498,8 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 //Manual homing switch locations:
 // For deltabots this means top and center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS 200
-#define MANUAL_Y_HOME_POS 200
+#define MANUAL_X_HOME_POS 210
+#define MANUAL_Y_HOME_POS 193
 #define MANUAL_Z_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 402 // For delta: Distance between nozzle and print surface after homing.
 
