@@ -60,6 +60,9 @@
 #undef HEATER_1_PIN
 #define HEATER_1_PIN  11
 
+#undef FAN1_PIN
+#define FAN1_PIN      2
+
 //
 // Misc. Functions
 //
@@ -69,5 +72,5 @@
 
 #if Z_STEP_PIN == 26
   #undef Z_STEP_PIN
-  #define Z_STEP_PIN 32
+  #define Z_STEP_PIN 46
 #endif
