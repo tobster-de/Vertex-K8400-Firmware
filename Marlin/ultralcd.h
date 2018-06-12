@@ -29,6 +29,10 @@
 
   #include "Marlin.h"
 
+  #ifdef VELLEMAN_ADDITIONAL_MENUS
+    #include "VellemanMenus.h"
+  #endif
+
   #if ENABLED(AUTO_BED_LEVELING_UBL) || ENABLED(G26_MESH_VALIDATION)
     extern bool lcd_external_control;
     #if ENABLED(G26_MESH_VALIDATION)

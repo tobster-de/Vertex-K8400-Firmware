@@ -2583,6 +2583,11 @@ void kill_screen(const char* lcd_msg) {
         MENU_ITEM(function, MSG_FILAMENTCHANGE, lcd_enqueue_filament_change);
     #endif
 
+    #ifdef VELLEMAN_ADDITIONAL_MENUS
+      MENU_ITEM(submenu, MSG_LOAD_FILAMENT, lcd_load_menu);
+      MENU_ITEM(submenu, MSG_UNLOAD_FILAMENT, lcd_unload_menu);
+    #endif 
+
     #if TEMP_SENSOR_0 != 0
 
       //
@@ -5153,6 +5158,11 @@ void lcd_reset_alert_level() { lcd_status_message_level = 0; }
     }
     return 0;
   }
+#endif
+
+
+#ifdef VELLEMAN_ADDITIONAL_MENUS
+#include "VellemanMenus.inc"
 #endif
 
 #endif // ULTRA_LCD
