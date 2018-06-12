@@ -123,9 +123,9 @@ tags
 lib/readme.txt
 
 #Visual Studio
-*.sln
-*.vcxproj
-*.vcxproj.filters
+#*.sln
+#*.vcxproj
+#*.vcxproj.filters
 Release/
 Debug/
 __vm/
